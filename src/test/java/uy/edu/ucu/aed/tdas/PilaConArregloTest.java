@@ -6,68 +6,66 @@ import org.junit.jupiter.api.BeforeEach;
 
 class PilaConArregloTest {
 
-    private PilaConArreglo<Integer> pila;
+    private IPila<Integer> pilaEnteros;
+    private IPila<String> pilaStrings;
 
     @BeforeEach
     void setUp() {
-        pila = new PilaConArreglo<>(10);
+        pilaEnteros = new PilaConArreglo<>(10);
+        pilaStrings = new PilaConArreglo<>(10);
     }
 
 
     @Test
     public void testPilaVaciaAlInicio() {
-        IPila<Integer> pila = new PilaConArreglo<>(10);
-        assertTrue(pila.EsVacia());
+        assertTrue(pilaEnteros.esVacia());
     }
 
     @Test
-    public void testMeteYTope() {
-        IPila<String> pila = new PilaConArreglo<>(10);
-        pila.Mete("Hola");
-        pila.Mete("Mundo");
-        assertEquals("Mundo", pila.Tope());
+    public void testapilarYtope() {
+        pilaStrings.apilar("Hola");
+        pilaStrings.apilar("Mundo");
+        assertEquals("Mundo", pilaStrings.tope());
     }
 
     @Test
-    public void testSaca() {
-        IPila<Integer> pila = new PilaConArreglo<>(10);
-        pila.Mete(10);
-        pila.Mete(20);
-        pila.Saca(); // Quita 20
-        assertEquals(10, pila.Tope());
+    public void testdesapilar() {
+        pilaEnteros.apilar(10);
+        pilaEnteros.apilar(20);
+        pilaEnteros.desapilar(); // Quita 20
+        assertEquals(10, pilaEnteros.tope());
     }
 
     @Test
-    public void testAnula() {
-        IPila<Integer> pila = new PilaConArreglo<>(10);
-        pila.Mete(1);
-        pila.Mete(2);
-        pila.Anula();
-        assertTrue(pila.EsVacia());
-        assertThrows(IllegalStateException.class, () -> pila.Tope());
+    public void testanular() {
+        pilaEnteros.apilar(1);
+        pilaEnteros.apilar(2);
+        pilaEnteros.anular();
+        assertTrue(pilaEnteros.esVacia());
+        assertThrows(IllegalStateException.class, () -> pilaEnteros.tope());
     }
 
     @Test
-    public void testTopeEnPilaVaciaLanzaExcepcion() {
+    public void testtopeEnPilaVaciaLanzaExcepcion() {
         IPila<Double> pila = new PilaConArreglo<>(0);
-        assertThrows(IllegalStateException.class, () -> pila.Tope());
+        assertThrows(IllegalStateException.class, () -> pila.tope());
     }
 
     @Test
-    public void testSacaEnPilaVaciaLanzaExcepcion() {
+    public void testdesapilarEnPilaVaciaLanzaExcepcion() {
         IPila<Double> pila = new PilaConArreglo<>(0);
-        assertThrows(IllegalStateException.class, () -> pila.Tope());
+        assertThrows(IllegalStateException.class, () -> pila.tope());
     }
 
     @Test
     public void testCrecimientoDinamico() {
         IPila<Integer> pila = new PilaConArreglo<>(2); // Tamaño inicial chico
-        pila.Mete(1);
-        pila.Mete(2);
-        pila.Mete(3); // Esto debería forzar el crecimiento
+        pila.apilar(1);
+        pila.apilar(2);
+        pila.apilar(3); // Esto debería forzar el crecimiento
 
-        assertEquals(3, pila.Tope());
-        pila.Saca();
-        assertEquals(2, pila.Tope());
+        assertEquals(3, pila.tope());
+        pila.desapilar();
+        assertEquals(2, pila.tope());
     }
 }
