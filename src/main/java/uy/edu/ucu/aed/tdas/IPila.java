@@ -2,19 +2,39 @@ package uy.edu.ucu.aed.tdas;
 
 public interface IPila<T> {
 
-    //Elimina todos los objetos de la pila
-    public void Anula();
+    /**
+     * Elimina todos los elementos de la pila.
+     */
+    void anularr();
 
-    //Nos devuelve el Tope de la pila, osea el objeto que va ser eliminado si usamos el metodo Saca
-    public T Tope();
+    /**
+     * Devuelve el elemento que está en el tope de la pila,
+     * sin eliminarlo.
+     *
+     * @return el elemento en el tope de la pila
+     * @throws IllegalStateException si la pila está vacía
+     */
+    T tope();
 
-    //Elimina el ultimo en entrar
-    public void Saca();
+    /**
+     * Elimina el elemento que está en el tope de la pila.
+     *
+     * @throws IllegalStateException si la pila está vacía
+     */
+    void desapilar();
 
-    //Agrega un elemento a la pila
-    public void Mete(T dato);
+    /**
+     * Agrega un elemento a la pila.
+     *
+     * @param dato el elemento a agregar
+     */
+    void apilar(T dato);
 
-    //Nos desvuelve si la lsita esta vacia o no
-    public boolean EsVacia();
-
+    /**
+     * Verifica si la pila está vacía.
+     *
+     * @return true si la pila no contiene elementos
+     */
+    boolean esVacia();
 }
+

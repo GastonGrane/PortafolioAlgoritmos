@@ -22,7 +22,7 @@ public class colaMain {
 
         cola.imprimirCola();
 
-        cola.anula(); // Vaciamos la cola
+        cola.anular(); // Vaciamos la cola
 
         System.out.println("Está vacía? " + cola.vacia()); // Verificamos que está vacía
 

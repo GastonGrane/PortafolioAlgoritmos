@@ -17,7 +17,7 @@ public class Cola<T> implements ICola<T> {
     }
 
     @Override
-    public void anula() {
+    public void anular() {
         primero = null; // Vacía la cola
     }
 

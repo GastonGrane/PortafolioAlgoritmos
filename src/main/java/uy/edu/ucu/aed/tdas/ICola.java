@@ -5,7 +5,7 @@ public interface ICola<T> {
     /**
      * Deja la cola vacía.
      */
-    public void anula();
+    public void anular();
 
     /**
      * Devuelve el elemento al frente de la cola sin eliminarlo.
