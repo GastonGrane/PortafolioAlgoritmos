@@ -17,7 +17,7 @@ public class PilaConArreglo<T> implements IPila<T> {
 
     @SuppressWarnings("unchecked")
     @Override
-    public void anularr() {
+    public void anular() {
         //De esta manera cuando utilizemos el metodo, hacemos que nuestra pila vuelva al tamanio original que una vez usamos, es la opcion
         //mas eficiente y menos costosa para poder empezar de nuevo y libero memoria que quizas no voy a utilizar si fue el caso de agrandar el Array
         datos = (T[]) new Object[tamanioOriginal];
