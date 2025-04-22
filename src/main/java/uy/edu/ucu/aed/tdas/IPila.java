@@ -5,7 +5,7 @@ public interface IPila<T> {
     /**
      * Elimina todos los elementos de la pila.
      */
-    void anularr();
+    void anular();
 
     /**
      * Devuelve el elemento que está en el tope de la pila,
