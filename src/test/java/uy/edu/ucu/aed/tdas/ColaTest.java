@@ -29,10 +29,10 @@ class ColaTest {
     }
 
     @Test
-    void testAnula() {
+    void testanular() {
         cola.poneEnCola(10);
         cola.poneEnCola(20);
-        cola.anula();
+        cola.anular();
         assertTrue(cola.vacia());
         assertNull(cola.frente());
     }

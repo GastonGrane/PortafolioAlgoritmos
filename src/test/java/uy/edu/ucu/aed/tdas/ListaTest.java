@@ -40,7 +40,7 @@ class ListaTest {
     }
 
     @Test
-    void testEsVaciaYCantElementos() {
+    void testesVaciaYCantElementos() {
         assertTrue(lista.esVacia());
         assertEquals(0, lista.cantElementos());
 
